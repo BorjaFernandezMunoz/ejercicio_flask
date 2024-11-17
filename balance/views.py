@@ -28,18 +28,22 @@ def add_movement():
     if request.method == 'POST':
         # TODO: crear un movimiento, agregarlo a la lista, guardar la lista y devolver el texto 'OK' (o 'ERROR' si falla)
         
-        datosIngresados = request.form
-        for elmnt in datosIngresados:
-            if datosIngresados[value]=='':
-                return render_template('nuevo.html', "Error: datos incompletos")
-           
-            else:
-
-                mov = Movimiento(request.form["date"], 
-                            request.form["subject"],
-                            request.form["mov_type"], 
-                            request.form["amount"])
+        mov = Movimiento(request.form["date"], 
+                         request.form["subject"],
+                         request.form["mov_type"], 
+                         request.form["amount"])
         
+        for value in mov.values():
+
+            if value=='':
+                mov.errores.append(value)      
+                     
+        if len(mov.errores)>0:
+
+            return render_template('nuevo.html', "ERROR")
+        
+        else:
+
             lista.agregarMovimiento(mov)
 
             return render_template('nuevo.html', "Datos agregados")
