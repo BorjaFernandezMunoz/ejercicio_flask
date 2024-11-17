@@ -26,27 +26,16 @@ def add_movement():
         return render_template('nuevo.html')
     
     if request.method == 'POST':
-        # TODO: crear un movimiento, agregarlo a la lista, guardar la lista y devolver el texto 'OK' (o 'ERROR' si falla)
         
         mov = Movimiento(request.form["date"], 
                          request.form["subject"],
                          request.form["mov_type"], 
                          request.form["amount"])
         
-        for value in mov.values():
+#TODO: ver cómo se puede lanzar el error. Fíjate en el error de la fecha, a ver cómo se lanza.
+        lista.agregarMovimiento(mov)
 
-            if value=='':
-                mov.errores.append(value)      
-                     
-        if len(mov.errores)>0:
-
-            return render_template('nuevo.html', "ERROR")
-        
-        else:
-
-            lista.agregarMovimiento(mov)
-
-            return render_template('nuevo.html', "Datos agregados")
+        return render_template('nuevo.html')
 
 
 @app.route('/modificar')
