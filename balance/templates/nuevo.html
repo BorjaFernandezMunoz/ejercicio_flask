@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block page_title%}
+<h1>Agregar movimiento</h1>
+{% endblock page_title %}
+
+{% block contenido %}
+
+
+<!--
+  CRUD: Create, Read, Update, Delete
+
+  GET: Leer (Read)
+  POST: Crear (Create)
+  PUT: Actualizar (Update)
+  DELETE: Borrar (Delete)
+-->
+
+<form action="/nuevo" method="post">
+  <!-- Fecha -->
+  <div class="campo-formulario">
+    <label for="fecha">Fecha</label>
+    <input type="date" name="date" id="fecha">
+  </div>
+
+  <!-- Concepto -->
+  <div class="campo-formulario">
+    <label for="concepto">Concepto</label>
+    <input type="text" name="subject" id="concepto">
+  </div>
+
+  <!-- Tipo -->
+  <div class="campo-formulario">
+    <input type="radio" name="mov_type" id="ingreso" value="I">
+    <label for="ingreso">Ingreso</label>
+    <input type="radio" name="mov_type" id="gasto" value="G">
+    <label for="gasto">Gasto</label>
+  </div>
+
+  <!-- Cantidad -->
+  <div class="campo-formulario">
+    <label for="cantidad">Cantidad</label>
+    <input type="number" name="amount" id="cantidad">
+  </div>
+
+  <!-- Botón de enviar -->
+  <div class="acciones">
+    <button type="submit">Enviar</button>
+  </div>
+</form>
+
+{% endblock contenido %}
