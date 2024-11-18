@@ -9,31 +9,45 @@ from . import RUTA_FICHERO
 class Movimiento:
 
     def __init__(self, fecha, concepto, tipo, cantidad):
-
         self.errores = []
-
         try:
             self.fecha = date.fromisoformat(fecha)
-
         except ValueError:
             self.fecha = None
             mensaje = f'La fecha {fecha} no es una fecha ISO 8601 válida'
             self.errores.append(mensaje)
 
-        return render_template('nuevo.html') 
-    
         self.concepto = concepto
         self.tipo = tipo
         self.cantidad = cantidad
-        #Aquí hay un problema que no entiendo __init__() should return None, not 'str'
+
+        
         if self.concepto==None or self.tipo==None or self.cantidad==None:
             
             mensaje ="Datos incompletos"
             self.errores.append(mensaje)
 
-        else:
-            pass
+  #      try:
+   #         self.concepto =
+    #    except ValueError:
+     #       self.concepto = None
+          #  mensaje = f'El concepto {concepto} no es válido'
+         #   self.errores.append(mensaje)
 
+        #except ValueError:
+         #   self.tipo = None
+        #    mensaje = f'El tipo {tipo} no es válido'
+       #     self.errores.append(mensaje)
+
+      #  except ValueError:
+     #       self.cantidad = None
+    #        mensaje = f'La cantidad {cantidad} no es una válida'
+   #         self.errores.append(mensaje)
+
+
+
+
+        #Aquí hay un problema que no entiendo __init__() should return None, not 'str'
 
 
     @property

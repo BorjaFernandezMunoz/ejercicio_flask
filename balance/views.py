@@ -33,6 +33,7 @@ def add_movement():
                          request.form["amount"])
         
 #TODO: ver cómo se puede lanzar el error.
+   
         lista.agregarMovimiento(mov)
 
         return render_template('nuevo.html')
