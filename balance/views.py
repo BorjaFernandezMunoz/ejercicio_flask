@@ -26,13 +26,13 @@ def add_movement():
         return render_template('nuevo.html')
     
     if request.method == 'POST':
-        
+            
         mov = Movimiento(request.form["date"], 
                          request.form["subject"],
                          request.form["mov_type"], 
                          request.form["amount"])
         
-#TODO: ver cómo se puede lanzar el error. Fíjate en el error de la fecha, a ver cómo se lanza.
+#TODO: ver cómo se puede lanzar el error.
         lista.agregarMovimiento(mov)
 
         return render_template('nuevo.html')
