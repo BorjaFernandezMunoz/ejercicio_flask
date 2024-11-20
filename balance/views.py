@@ -37,10 +37,8 @@ def add_movement():
 
         if mov.has_errors()>0:
             return f"ERROR: {mov.errores}"
-        else:
-            return "OK"
-        
-    return redirect(url for('home'))
+       
+        return redirect('/')
 
 
 @app.route('/modificar')

@@ -1,17 +1,9 @@
-fecha,concepto,tipo,cantidad
-
-2024-11-10,Libro de programación en Python,-,39.95
-
-2024-11-11,Libro de programación orientada a objetos,-,29.95
-
-2024-11-12,Bote de propinas,-,23
-
-,Curso de HTML5 y CSS3 de KeepCoding,-,49.95
-
-,Curso de HTML5,-,49.95
-
-,Curso de HTML5,-,49.95
-
-2024-11-14,Visual Studio Code PRO,-,3.25
-
-
+fecha,concepto,tipo,cantidad
+2024-11-10,Libro de programación en Python,-,39.95
+2024-11-11,Libro de programación orientada a objetos,-,29.95
+2024-11-12,Bote de propinas,-,23
+,Curso de HTML5 y CSS3 de KeepCoding,-,49.95
+,Curso de HTML5,-,49.95
+,Curso de HTML5,-,49.95
+2024-11-14,Visual Studio Code PRO,-,3.25
+2024-11-21,Libro,G,21
