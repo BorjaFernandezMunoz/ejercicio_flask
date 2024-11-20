@@ -40,7 +40,7 @@ def add_movement():
         else:
             return "OK"
         
-        return redirect(url for 'home')
+    return redirect(url for('home'))
 
 
 @app.route('/modificar')
