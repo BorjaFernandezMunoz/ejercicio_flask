@@ -20,27 +20,27 @@
   <!-- Fecha -->
   <div class="campo-formulario">
     <label for="fecha">Fecha</label>
-    <input type="date" name="date" id="fecha">
+    <input type="date" name="date" id="fecha" required>
   </div>
 
   <!-- Concepto -->
   <div class="campo-formulario">
     <label for="concepto">Concepto</label>
-    <input type="text" name="subject" id="concepto">
+    <input type="text" name="subject" id="concepto" required>
   </div>
 
   <!-- Tipo -->
   <div class="campo-formulario">
     <input type="radio" name="mov_type" id="ingreso" value="I">
     <label for="ingreso">Ingreso</label>
-    <input type="radio" name="mov_type" id="gasto" value="G">
+    <input type="radio" name="mov_type" id="gasto" value="G" checked>
     <label for="gasto">Gasto</label>
   </div>
 
   <!-- Cantidad -->
   <div class="campo-formulario">
     <label for="cantidad">Cantidad</label>
-    <input type="number" name="amount" id="cantidad">
+    <input type="number" name="amount" id="cantidad" step=".01" min=".01" required>
   </div>
 
   <!-- Botón de enviar -->
