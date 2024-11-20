@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import redirect, render_template, request, url_for
 
 from .models import ListaMovimientos, Movimiento
 from . import app
@@ -40,7 +40,7 @@ def add_movement():
         else:
             return "OK"
         
-        return render_template('nuevo.html')
+        return redirect(url for 'home')
 
 
 @app.route('/modificar')
