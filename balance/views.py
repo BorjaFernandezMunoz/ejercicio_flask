@@ -32,10 +32,14 @@ def add_movement():
                          request.form["mov_type"], 
                          request.form["amount"])
         
-#TODO: ver cómo se puede lanzar el error.
    
         lista.agregarMovimiento(mov)
 
+        if mov.has_errors()>0:
+            return f"ERROR: {mov.errores}"
+        else:
+            return "OK"
+        
         return render_template('nuevo.html')
 
 

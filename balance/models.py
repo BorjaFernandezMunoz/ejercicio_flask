@@ -9,7 +9,9 @@ from . import RUTA_FICHERO
 class Movimiento:
 
     def __init__(self, fecha, concepto, tipo, cantidad):
+
         self.errores = []
+
         try:
             self.fecha = date.fromisoformat(fecha)
         except ValueError:
@@ -22,7 +24,7 @@ class Movimiento:
         self.cantidad = cantidad
 
         
-        if self.concepto==None or self.tipo==None or self.cantidad==None:
+        if self.concepto=='' or self.tipo=='' or self.cantidad=='':
             
             mensaje ="Datos incompletos"
             self.errores.append(mensaje)
@@ -72,7 +74,7 @@ class ListaMovimientos:
             reader = csv.DictReader(fichero)
             for fila in reader:
                 movimiento = Movimiento(
-                    fila.get('fecha', None),
+                    fila.get('fecha', ''),
                     fila.get('concepto', 'Varios'),
                     fila.get('ingreso_gasto', '-'),
                     fila.get('cantidad', 0)
